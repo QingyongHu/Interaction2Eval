@@ -4,34 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>When AI Meets Early Childhood Education | AIED 2026</title>
-  <meta name="description" content="Large Language Models as Assessment Teammates in Chinese Preschools — AIED 2026, Seoul" />
+  <meta name="description" content="Large Language Models as Assessment Teammates in Chinese Preschools — AIED 2026, Seoul, South Korea" />
+  <meta property="og:title" content="When AI Meets Early Childhood Education | AIED 2026" />
+  <meta property="og:description" content="Interaction2Eval: scalable AI-powered teacher-child interaction assessment with 88% expert agreement and 18× efficiency gains." />
 
-  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
-
-  <!-- Main JS (deferred) -->
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
 
-<!-- ===== Navigation ===== -->
+<!-- ===== Nav ===== -->
 <nav>
-  <div class="nav-brand">
+  <a class="nav-brand" href="#hero">
     <span class="nav-badge">AIED 2026</span>
-    <span>LLM × Early Childhood Education</span>
-  </div>
+    <span>AI × Early Childhood Education</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#dataset">Dataset</a></li>
-    <li><a href="#framework">Framework</a></li>
+    <li><a href="#framework">Method</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#authors">Authors</a></li>
     <li><a href="#citation">Cite</a></li>
@@ -41,25 +37,30 @@
 <!-- ===== Hero ===== -->
 <section id="hero">
   <canvas id="particles-canvas"></canvas>
-  <div class="hero-bg-glow glow-1"></div>
-  <div class="hero-bg-glow glow-2"></div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
 
   <div class="container">
-    <div class="hero-content">
+    <div class="hero-inner">
       <div class="hero-left">
         <div class="conference-badge">
-          <span class="dot"></span>
+          <span class="conf-dot"></span>
           AIED 2026 &nbsp;·&nbsp; Seoul, South Korea
         </div>
 
         <h1 class="hero-title">
-          <span class="ai-part">When AI Meets</span>
+          <span class="highlight">When AI Meets</span>
           Early Childhood Education
-          <span style="display:block; font-size:0.65em; color:#94a3b8; font-weight:500; margin-top:0.5rem; -webkit-text-fill-color:#94a3b8;">
+          <span class="subtitle-line">
             Large Language Models as Assessment Teammates in Chinese Preschools
           </span>
           <span class="accepted-chip">&#10003; Accepted</span>
         </h1>
+
+        <p class="hero-meta">
+          <strong>Paper #408</strong> &nbsp;·&nbsp; 27th International Conference on Artificial Intelligence in Education
+        </p>
 
         <div class="hero-authors">
           <span class="author-chip">Xingming Li</span>
@@ -72,19 +73,19 @@
 
         <div class="hero-cta">
           <a href="AIED26_paper_408.pdf" download class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Read Paper
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Paper
           </a>
           <a href="#results" class="btn btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            View Results
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            See Results
           </a>
         </div>
       </div>
 
-      <div class="hero-right">
+      <div class="hero-figure-wrap">
         <div class="hero-figure">
-          <img src="figs/Teaser.png" alt="Research Overview — AI-powered teacher-child interaction assessment" />
+          <img src="figs/Teaser.png" alt="AIED 2026 — AI-powered teacher-child interaction quality assessment in Chinese preschools" />
         </div>
       </div>
     </div>
@@ -96,291 +97,286 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <div class="stat-number">
-          <span data-count="370" data-suffix="+">0+</span>
-        </div>
+        <div class="stat-number"><span data-count="370" data-suffix="+">370+</span></div>
         <div class="stat-label">Hours of Classroom Audio</div>
       </div>
-      <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-number">
-          <span data-count="105">0</span>
-        </div>
+      <div class="stat-item reveal d1">
+        <div class="stat-number"><span data-count="105">105</span></div>
         <div class="stat-label">Kindergarten Classrooms</div>
       </div>
-      <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-number">
-          <span data-count="2550">0</span>
-        </div>
+      <div class="stat-item reveal d2">
+        <div class="stat-number"><span data-count="2550">2550</span></div>
         <div class="stat-label">Unique Speakers</div>
       </div>
-      <div class="stat-item reveal reveal-delay-3">
-        <div class="stat-number">
-          <span data-count="18" data-suffix="×">0×</span>
-        </div>
-        <div class="stat-label">Efficiency Gain</div>
+      <div class="stat-item reveal d3">
+        <div class="stat-number"><span data-count="18" data-suffix="×">18×</span></div>
+        <div class="stat-label">Efficiency Gain Over Manual</div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Abstract ===== -->
 <section id="abstract">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Abstract</h2>
-      <p class="section-subtitle">The research problem and our approach at a glance</p>
+      <p class="section-label">Abstract</p>
+      <h2 class="section-title">The Research Problem &amp; Our Approach</h2>
     </div>
 
-    <div class="abstract-card reveal">
+    <div class="abstract-box reveal">
       <p class="abstract-text">
-        High-quality <strong>teacher-child interaction (TCI)</strong> is fundamental to early childhood development, yet traditional expert-based assessment faces a critical <strong>scalability challenge</strong>. In China's system serving <strong>36 million children across 250,000+ kindergartens</strong>, the cost and time requirements of manual observation make continuous quality monitoring infeasible, relegating assessment to infrequent episodic audits.
+        High-quality <strong>teacher-child interaction (TCI)</strong> is fundamental to early childhood development, yet traditional expert-based assessment faces a critical <strong>scalability challenge</strong>. In China's system serving <strong>36 million children across 250,000+ kindergartens</strong>, the cost and time requirements of manual observation make continuous quality monitoring infeasible, relegating assessment to infrequent episodic audits that limit timely intervention and improvement tracking.
       </p>
-      <p class="abstract-text" style="margin-top:1rem;">
-        We investigate whether AI can serve as a scalable assessment teammate by extracting structured quality indicators and validating their alignment with human expert judgments. Our framework <strong>Interaction2Eval</strong> achieves up to <strong>88% agreement</strong> with human experts, demonstrated through deployment validation across <strong>43 classrooms</strong> with an <strong>18× efficiency gain</strong>—enabling a shift from annual expert audits to monthly AI-assisted monitoring.
+      <p class="abstract-text">
+        We investigate whether AI can serve as a scalable assessment teammate by extracting structured quality indicators and validating their alignment with human expert judgments. Our <strong>Interaction2Eval</strong> framework achieves up to <strong>88% agreement</strong> with human experts, validated through pilot deployment across <strong>43 classrooms</strong> with an <strong>18× efficiency gain</strong>—enabling a paradigm shift from annual expert audits to monthly AI-assisted monitoring with targeted human oversight.
       </p>
 
-      <div class="contributions-grid">
-        <div class="contribution-card reveal reveal-delay-1">
-          <div class="contribution-icon">🗄️</div>
+      <div class="contribs">
+        <div class="contrib-card reveal d1">
+          <span class="contrib-icon">🗄️</span>
           <h4>TEPE-TCI-370h Dataset</h4>
           <p>First large-scale dataset of naturalistic teacher-child interactions in Chinese preschools — 370 hours, 105 classrooms, standardized ECQRS-EC &amp; SSTEW annotations.</p>
         </div>
-        <div class="contribution-card reveal reveal-delay-2">
-          <div class="contribution-icon">🤖</div>
+        <div class="contrib-card reveal d2">
+          <span class="contrib-icon">🤖</span>
           <h4>Interaction2Eval Framework</h4>
-          <p>Specialized LLM-based pipeline addressing domain challenges: child speech recognition, Mandarin homophone disambiguation, and rubric-based reasoning.</p>
+          <p>Specialized LLM-based pipeline for educational speech: Mandarin homophone disambiguation, child speech recognition, rubric-based assessment with evidence-first reasoning.</p>
         </div>
-        <div class="contribution-card reveal reveal-delay-3">
-          <div class="contribution-icon">🚀</div>
+        <div class="contrib-card reveal d3">
+          <span class="contrib-icon">🚀</span>
           <h4>Scalable Deployment</h4>
-          <p>18× efficiency gains validated across 43 classrooms, enabling a new paradigm of continuous AI-assisted monitoring with targeted human oversight.</p>
+          <p>18× efficiency gains validated across 43 real classrooms — shifting from annual episodic audits to monthly AI-assisted continuous monitoring.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Dataset ===== -->
 <section id="dataset">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">TEPE-TCI-370h Dataset</h2>
-      <p class="section-subtitle">The first large-scale naturalistic teacher-child interaction corpus in Chinese preschools</p>
+      <p class="section-label">Dataset</p>
+      <h2 class="section-title">TEPE-TCI-370h</h2>
+      <p class="section-subtitle">The first large-scale naturalistic teacher-child interaction corpus in Chinese preschools, with expert-quality standardized annotations.</p>
     </div>
 
-    <div class="dataset-layout">
-      <div class="dataset-figure reveal">
-        <img src="figs/dataset.png" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools across 105 classrooms" />
+    <div class="two-col">
+      <div class="figure-frame reveal">
+        <img src="figs/dataset.png" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools, 105 classrooms" />
+        <p class="figure-caption">Figure 1: TEPE-TCI dataset composition and statistics</p>
       </div>
 
-      <div class="dataset-info reveal reveal-delay-1">
-        <h3>Data Collection</h3>
+      <div class="info-block reveal d1">
+        <h3>Data Collection &amp; Annotation</h3>
         <p>
-          Collected from <strong>41 public preschools</strong> across three quality tiers in China, spanning 105 classrooms with 3–4 year-old children. Professional-grade recording equipment captured 370+ hours of naturalistic interactions during group activities, free play, outdoor activities, and daily routines.
+          Collected from <strong>41 public preschools</strong> across three quality tiers in China (district, municipal, provincial level), covering 105 classrooms with 3–4 year-old children. iFLYTEK H1 Pro recorders captured 370+ hours of naturalistic audio across group activities, free play, outdoor activities, and daily routines.
         </p>
         <p>
-          Expert annotators (κ &gt; 0.80) applied standardized <strong>ECQRS-EC</strong> (22 items, 4 domains) and <strong>SSTEW</strong> (15 items) rubrics with indicator-level binary coding.
+          Professional assessors (κ &gt; 0.80 inter-rater reliability) applied <strong>ECQRS-EC</strong> (22 items, 4 domains: Literacy, Mathematics, Science, Diversity) and <strong>SSTEW</strong> (15 items) rubrics with indicator-level binary coding across 206 total indicators.
         </p>
 
-        <div class="chart-container">
+        <div class="chart-box">
           <canvas id="speechChart"></canvas>
-          <p class="chart-label">Speech Segment Distribution</p>
+          <p class="chart-cap">Speech Segment Distribution (Teacher vs. Student)</p>
         </div>
-
-        <div class="chart-container">
+        <div class="chart-box">
           <canvas id="speakerChart"></canvas>
-          <p class="chart-label">Speaker Count Distribution</p>
+          <p class="chart-cap">Speaker Count Distribution</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Framework ===== -->
 <section id="framework">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Interaction2Eval Framework</h2>
-      <p class="section-subtitle">A three-stage LLM pipeline from classroom audio to expert-level quality assessment</p>
+      <p class="section-label">Method</p>
+      <h2 class="section-title">Interaction2Eval Framework</h2>
+      <p class="section-subtitle">A three-stage LLM-based pipeline that transforms raw classroom audio into expert-level quality assessments.</p>
     </div>
 
-    <div class="framework-figure reveal">
-      <img src="figs/framework.png" alt="Interaction2Eval Pipeline — Transcription, Refinement, and Evaluation Agents" />
+    <div class="framework-fig reveal">
+      <img src="figs/framework.png" alt="Interaction2Eval Pipeline — Transcription Agent, Refinement Agent, Evaluation Agent" />
     </div>
 
-    <div class="pipeline-grid">
-      <div class="pipeline-step reveal reveal-delay-1">
-        <div class="step-number">1</div>
+    <div class="steps">
+      <div class="step-card reveal d1">
+        <div class="step-badge">1</div>
         <h4>Transcription Agent</h4>
-        <p>Processes raw classroom audio using <strong>FunASR Paraformer</strong> with speaker diarization and punctuation restoration. Identifies teacher vs. student speech segments automatically.</p>
+        <p>Processes raw classroom audio using <strong>FunASR Paraformer</strong> with speaker diarization and punctuation restoration, distinguishing teacher and student speech automatically.</p>
       </div>
-      <div class="pipeline-step reveal reveal-delay-2">
-        <div class="step-number">2</div>
+      <div class="step-card reveal d2">
+        <div class="step-badge">2</div>
         <h4>Refinement Agent</h4>
-        <p>Leverages <strong>Qwen3-Max</strong> for context-aware correction of domain-specific errors — Mandarin homophones, educational terminology — reducing CER from 9.9% to <strong>4.3%</strong>.</p>
+        <p>Leverages <strong>Qwen3-Max</strong> with domain-aware prompting for context-sensitive error correction — targeting Mandarin homophones and preschool-specific educational vocabulary.</p>
       </div>
-      <div class="pipeline-step reveal reveal-delay-3">
-        <div class="step-number">3</div>
+      <div class="step-card reveal d3">
+        <div class="step-badge">3</div>
         <h4>Evaluation Agent</h4>
-        <p>Applies rubric-based prompting to detect behavioral indicators from SSTEW and ECQRS-EC. Evidence-first reasoning: locate utterances → judge presence → justify with transcript evidence.</p>
+        <p>Applies rubric-based prompting (SSTEW &amp; ECQRS-EC) with evidence-first reasoning: locate utterances → judge indicator presence → justify with transcript evidence → generate feedback.</p>
       </div>
     </div>
 
-    <div class="efficiency-callout reveal">
-      <div class="efficiency-item">
-        <div class="efficiency-label">Traditional Expert</div>
-        <div class="efficiency-value old">380 min</div>
+    <div class="efficiency-bar reveal">
+      <div class="eff-item">
+        <div class="eff-lbl">Traditional Expert</div>
+        <div class="eff-val crossed">380 min</div>
       </div>
-      <div class="efficiency-arrow">→</div>
-      <div class="efficiency-item">
-        <div class="efficiency-label">Interaction2Eval</div>
-        <div class="efficiency-value new">21 min</div>
+      <div class="eff-arrow">→</div>
+      <div class="eff-item">
+        <div class="eff-lbl">Interaction2Eval</div>
+        <div class="eff-val new">21 min</div>
       </div>
-      <div class="efficiency-badge">⚡ 18× Faster</div>
+      <div class="eff-pill">⚡ 18× Faster</div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Results ===== -->
 <section id="results">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Experimental Results</h2>
-      <p class="section-subtitle">State-of-the-art LLMs evaluated against expert human annotations on two rubric scales</p>
+      <p class="section-label">Results</p>
+      <h2 class="section-title">Experimental Findings</h2>
+      <p class="section-subtitle">State-of-the-art LLMs evaluated against expert annotations across two standardized rubric scales.</p>
     </div>
 
-    <div class="results-grid">
-      <div class="result-card reveal">
-        <h4>ECQRS-EC Scale Agreement</h4>
-        <p class="sub">Curriculum-aligned assessment across Literacy, Mathematics, Science &amp; Diversity domains</p>
+    <!-- Bar charts -->
+    <div class="charts-grid">
+      <div class="chart-card reveal">
+        <h4>ECQRS-EC Scale — Model Agreement</h4>
+        <p class="sub">Across Literacy, Mathematics, Science &amp; Diversity domains</p>
         <canvas id="ecqrsChart"></canvas>
       </div>
-      <div class="result-card reveal reveal-delay-1">
-        <h4>SSTEW Scale Agreement</h4>
-        <p class="sub">Language-focused assessment: Trust &amp; Self-regulation, Language, Critical Thinking, Planning</p>
+      <div class="chart-card reveal d1">
+        <h4>SSTEW Scale — Model Agreement</h4>
+        <p class="sub">Trust &amp; Self-regulation, Language, Critical Thinking, Planning</p>
         <canvas id="sstewChart"></canvas>
       </div>
     </div>
 
-    <!-- CER Table -->
-    <div class="result-card reveal" style="margin-bottom: 2rem;">
-      <h4>ASR Transcription Quality — Character Error Rate (CER)</h4>
-      <p class="sub">Effect of the Refinement Agent on two state-of-the-art ASR models (5-hour test set, 16,168 reference characters)</p>
-      <table class="cer-table">
+    <!-- CER table -->
+    <div class="cer-card reveal">
+      <h4>ASR Quality — Character Error Rate (CER) Before &amp; After Refinement</h4>
+      <p class="sub">Evaluated on a 5-hour test set (16,168 reference characters from naturalistic preschool audio)</p>
+      <table>
         <thead>
           <tr>
-            <th>Model</th>
+            <th>ASR Model</th>
             <th>Raw CER</th>
             <th>After Refinement</th>
-            <th>Absolute ↓</th>
-            <th>Relative ↓</th>
+            <th>Absolute Reduction</th>
+            <th>Relative Improvement</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Whisper-large v3</td>
             <td>35.1%</td>
-            <td class="reduced">23.2%</td>
+            <td class="td-green">23.2%</td>
             <td>−11.9%</td>
-            <td class="highlight">33.4%</td>
+            <td class="td-hi">33.4%</td>
           </tr>
           <tr>
-            <td>FunASR Paraformer</td>
+            <td>FunASR Paraformer ★</td>
             <td>9.9%</td>
-            <td class="reduced">4.3%</td>
+            <td class="td-green">4.3%</td>
             <td>−5.6%</td>
-            <td class="highlight">56.6%</td>
+            <td class="td-hi">56.6%</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Word Cloud -->
-    <div class="wordcloud-section reveal">
-      <div class="wordcloud-card">
-        <div class="wordcloud-figure">
-          <img src="figs/wordcloud.png" alt="Word cloud of frequently misrecognized terms in ASR output" style="width:100%; height:100%; object-fit:cover;" />
-        </div>
-        <div class="wordcloud-info">
-          <div>
-            <h4>Misrecognized Terms Analysis</h4>
-            <p>
-              ASR systems struggle most with <strong>education-specific vocabulary</strong> in preschool contexts. The word cloud visualizes the most frequently misrecognized terms, with size reflecting error frequency.
-            </p>
-            <p style="margin-top:0.75rem;">
-              Errors concentrate on Mandarin homophones like <em>jìnqū</em> (进区, enter learning centers) vs. <em>jìnqù</em> (进去, go inside) — validating the need for our domain-aware Refinement Agent.
-            </p>
-          </div>
-          <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem; font-size: 0.82rem; color: #64748b; border: 1px solid rgba(255,255,255,0.05);">
-            <strong style="color:#94a3b8; display:block; margin-bottom:0.4rem;">Error Type Breakdown</strong>
-            Homophones: 51.67% · Extra words: 20.80%<br/>
-            Speaker ID: 13.72% · Punctuation: 7.75%<br/>
-            Omissions: 6.06%
-          </div>
+    <!-- Word cloud -->
+    <div class="wc-card reveal">
+      <div class="wc-img">
+        <img src="figs/wordcloud.png" alt="Word cloud of frequently misrecognized terms in ASR output from Chinese preschool audio" />
+      </div>
+      <div class="wc-body">
+        <h4>Misrecognized Terms Word Cloud</h4>
+        <p>
+          ASR systems struggle with <strong>education-specific vocabulary</strong> in preschool settings. The word cloud visualizes the most frequent ASR errors, with size proportional to error frequency.
+        </p>
+        <p>
+          Errors concentrate on Mandarin homophones — e.g., <em>jìnqū</em> (进区, enter learning centers) vs. <em>jìnqù</em> (进去, go inside) — validating the necessity of the domain-aware Refinement Agent.
+        </p>
+        <div class="error-breakdown">
+          <strong>Error Type Breakdown (Initial ASR Output)</strong>
+          Homophones: 51.67% &nbsp;·&nbsp; Extra words: 20.80%<br/>
+          Speaker ID: 13.72% &nbsp;·&nbsp; Punctuation: 7.75%<br/>
+          Omissions: 6.06%
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Deployment ===== -->
 <section id="deployment">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Real-World Deployment</h2>
-      <p class="section-subtitle">Validated across 43 classrooms in Shenzhen kindergartens over 4 weeks</p>
+      <p class="section-label">Real-World Deployment</p>
+      <h2 class="section-title">Pilot Study — Shenzhen Kindergartens</h2>
+      <p class="section-subtitle">Validated across 43 classrooms in 3 public kindergartens over 4 weeks of preliminary deployment.</p>
     </div>
 
-    <div class="deployment-layout">
-      <div class="deployment-figure reveal">
-        <img src="figs/feedback.png" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions" />
+    <div class="deploy-grid">
+      <div class="figure-frame reveal">
+        <img src="figs/feedback.png" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions processed" />
+        <p class="figure-caption">Figure 4: Pilot deployment overview — data collection, pipeline, and teacher feedback</p>
       </div>
 
-      <div class="reveal reveal-delay-1">
+      <div class="reveal d1">
         <div class="deploy-stats">
-          <div class="deploy-stat">
+          <div class="ds-card">
             <div class="num">127</div>
             <div class="lbl">Sessions Processed</div>
           </div>
-          <div class="deploy-stat">
+          <div class="ds-card">
             <div class="num">96.8%</div>
             <div class="lbl">Success Rate</div>
           </div>
-          <div class="deploy-stat">
+          <div class="ds-card">
             <div class="num">77</div>
             <div class="lbl">Teachers Participated</div>
           </div>
-          <div class="deploy-stat">
+          <div class="ds-card">
             <div class="num">3</div>
             <div class="lbl">Kindergartens</div>
           </div>
         </div>
 
-        <div class="testimonials">
+        <div class="quotes">
           <blockquote>
             "Same-day results — I could finally see what happened in my classroom that morning and adjust my afternoon accordingly."
-            <cite>— Teacher feedback, Shenzhen pilot</cite>
+            <cite>— Teacher, Shenzhen pilot deployment</cite>
           </blockquote>
           <blockquote>
-            "The exact quotes supporting each score made the evaluations understandable. This is like a <em>data mirror</em> for my teaching."
+            "The exact quotes supporting each score made the evaluations understandable. It's like a <em>data mirror</em> for evidence-based reflection."
             <cite>— 22-year veteran teacher, Shenzhen pilot</cite>
           </blockquote>
         </div>
 
-        <div style="margin-top:1.5rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px; padding: 1.25rem;">
-          <h4 style="color: #10b981; font-size:0.95rem; margin-bottom:0.5rem;">System Impact</h4>
-          <p style="color: #94a3b8; font-size:0.88rem; line-height:1.6;">
-            Interaction2Eval reduces expert workload from <strong style="color:#f1f5f9;">633 expert-hours</strong> to <strong style="color:#10b981;">35 expert-hours</strong> per 100 classrooms monthly — enabling a shift from annual episodic audits to <strong style="color:#f1f5f9;">continuous monthly monitoring</strong> with targeted human oversight.
+        <div class="impact-box">
+          <h5>System-Level Impact</h5>
+          <p>
+            Interaction2Eval reduces expert workload from <strong>633 expert-hours</strong> to <strong>35 expert-hours</strong> per 100 classrooms monthly — enabling a shift from annual episodic audits to <strong>continuous monthly AI-assisted monitoring</strong> with targeted human oversight.
           </p>
         </div>
       </div>
@@ -388,88 +384,87 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Authors ===== -->
 <section id="authors">
   <div class="container">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Authors</h2>
-      <p class="section-subtitle">A cross-institutional collaboration between NUDT, CUHK-Shenzhen, and the University of Oxford</p>
+      <p class="section-label">Authors</p>
+      <h2 class="section-title">Research Team</h2>
+      <p class="section-subtitle">A cross-institutional collaboration between NUDT, CUHK-Shenzhen, and the University of Oxford.</p>
     </div>
 
     <div class="authors-grid">
 
-      <!-- Xingming Li -->
       <div class="author-card reveal">
-        <div class="author-avatar">
-          <img src="bio/Xingming Li.jpg" alt="Xingming Li" onerror="this.parentElement.outerHTML='<div class=\'author-initials\' style=\'background:linear-gradient(135deg,#00f5ff,#8b5cf6);\'>XL</div>'" />
+        <div class="avatar">
+          <img src="bio/Xingming Li.jpg" alt="Xingming Li"
+               onerror="this.closest('.author-card').querySelector('.avatar').outerHTML='<div class=\'avatar-initials\' style=\'background:linear-gradient(135deg,#2563eb,#7c3aed);\'>XL</div>'" />
         </div>
         <h3>Xingming Li</h3>
-        <p class="institution">National University of Defense Technology</p>
-        <a href="mailto:lixingming@nudt.edu.cn" class="email">
+        <p class="inst">National University of Defense Technology, China</p>
+        <a href="mailto:lixingming@nudt.edu.cn" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           lixingming@nudt.edu.cn
         </a>
       </div>
 
-      <!-- Runke Huang (Corresponding) -->
-      <div class="author-card reveal reveal-delay-1" style="border-color: rgba(0,245,255,0.2);">
-        <div style="position:absolute; top:1rem; right:1rem; font-size:0.68rem; color:#00f5ff; background:rgba(0,245,255,0.1); padding:0.2rem 0.5rem; border-radius:100px; border:1px solid rgba(0,245,255,0.2);">✉ Corresponding</div>
-        <div class="author-avatar">
-          <img src="bio/runke huang.png" alt="Runke Huang" onerror="this.parentElement.outerHTML='<div class=\'author-initials\' style=\'background:linear-gradient(135deg,#00f5ff,#0ea5e9);\'>RH</div>'" />
+      <div class="author-card reveal d1">
+        <span class="corr-badge">✉ Corresponding</span>
+        <div class="avatar">
+          <img src="bio/runke huang.png" alt="Runke Huang"
+               onerror="this.closest('.author-card').querySelector('.avatar').outerHTML='<div class=\'avatar-initials\' style=\'background:linear-gradient(135deg,#2563eb,#0ea5e9);\'>RH</div>'" />
         </div>
         <h3>Runke Huang</h3>
-        <p class="institution">The Chinese University of Hong Kong, Shenzhen</p>
-        <a href="mailto:runkehuang@cuhk.edu.cn" class="email">
+        <p class="inst">The Chinese University of Hong Kong, Shenzhen</p>
+        <a href="mailto:runkehuang@cuhk.edu.cn" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           runkehuang@cuhk.edu.cn
         </a>
       </div>
 
-      <!-- Yanan Bao -->
-      <div class="author-card reveal reveal-delay-2">
-        <div class="author-initials" style="background: linear-gradient(135deg, #f59e0b, #ec4899);">YB</div>
+      <div class="author-card reveal d2">
+        <div class="avatar-initials" style="background: linear-gradient(135deg, #d97706, #dc2626);">YB</div>
         <h3>Yanan Bao</h3>
-        <p class="institution">The Chinese University of Hong Kong, Shenzhen</p>
-        <a href="mailto:yananbao@link.cuhk.edu.cn" class="email">
+        <p class="inst">The Chinese University of Hong Kong, Shenzhen</p>
+        <a href="mailto:yananbao@link.cuhk.edu.cn" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           yananbao@link.cuhk.edu.cn
         </a>
       </div>
 
-      <!-- Yuye Jin -->
-      <div class="author-card reveal reveal-delay-1">
-        <div class="author-initials" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">YJ</div>
+      <div class="author-card reveal">
+        <div class="avatar-initials" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">YJ</div>
         <h3>Yuye Jin</h3>
-        <p class="institution">The Chinese University of Hong Kong, Shenzhen</p>
-        <a href="mailto:yuyejin@link.cuhk.edu.cn" class="email">
+        <p class="inst">The Chinese University of Hong Kong, Shenzhen</p>
+        <a href="mailto:yuyejin@link.cuhk.edu.cn" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           yuyejin@link.cuhk.edu.cn
         </a>
       </div>
 
-      <!-- Yuru Jiao -->
-      <div class="author-card reveal reveal-delay-2">
-        <div class="author-avatar">
-          <img src="bio/Yuru jiao.jpg" alt="Yuru Jiao" onerror="this.parentElement.outerHTML='<div class=\'author-initials\' style=\'background:linear-gradient(135deg,#10b981,#0ea5e9);\'>YJ</div>'" />
+      <div class="author-card reveal d1">
+        <div class="avatar">
+          <img src="bio/Yuru jiao.jpg" alt="Yuru Jiao"
+               onerror="this.closest('.author-card').querySelector('.avatar').outerHTML='<div class=\'avatar-initials\' style=\'background:linear-gradient(135deg,#059669,#0ea5e9);\'>YJ</div>'" />
         </div>
         <h3>Yuru Jiao</h3>
-        <p class="institution">The Chinese University of Hong Kong, Shenzhen</p>
-        <a href="mailto:yurujiao03@gmail.com" class="email">
+        <p class="inst">The Chinese University of Hong Kong, Shenzhen</p>
+        <a href="mailto:yurujiao03@gmail.com" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           yurujiao03@gmail.com
         </a>
       </div>
 
-      <!-- Qingyong Hu -->
-      <div class="author-card reveal reveal-delay-3">
-        <div class="author-avatar">
-          <img src="bio/Qingyong Hu.jpg" alt="Qingyong Hu" onerror="this.parentElement.outerHTML='<div class=\'author-initials\' style=\'background:linear-gradient(135deg,#60a5fa,#8b5cf6);\'>QH</div>'" />
+      <div class="author-card reveal d2">
+        <div class="avatar">
+          <img src="bio/Qingyong Hu.jpg" alt="Qingyong Hu"
+               onerror="this.closest('.author-card').querySelector('.avatar').outerHTML='<div class=\'avatar-initials\' style=\'background:linear-gradient(135deg,#3b82f6,#7c3aed);\'>QH</div>'" />
         </div>
         <h3>Qingyong Hu</h3>
-        <p class="institution">University of Oxford</p>
-        <a href="mailto:huqingyong15@outlook.com" class="email">
+        <p class="inst">University of Oxford, UK</p>
+        <a href="mailto:huqingyong15@outlook.com" class="mail">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           huqingyong15@outlook.com
         </a>
@@ -479,32 +474,33 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ===== Citation ===== -->
 <section id="citation">
-  <div class="container">
+  <div class="container" style="max-width: 860px;">
     <div class="section-header reveal">
-      <h2 class="section-title gradient-text">Cite This Work</h2>
-      <p class="section-subtitle">If you use TEPE-TCI or Interaction2Eval in your research, please cite our paper</p>
+      <p class="section-label">Citation</p>
+      <h2 class="section-title">Cite This Work</h2>
+      <p class="section-subtitle">If you find TEPE-TCI or Interaction2Eval useful in your research, please cite our paper.</p>
     </div>
 
-    <div class="citation-card reveal">
-      <div class="citation-header">
+    <div class="cite-card reveal">
+      <div class="cite-header">
         <span>BibTeX</span>
         <button class="copy-btn" id="copyBibtex">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           Copy BibTeX
         </button>
       </div>
-      <div class="citation-body">
-        <pre id="bibtexCode"><span class="bibtex-brace">@inproceedings{</span><span class="bibtex-key">li2026when</span><span class="bibtex-brace">,</span>
-  <span class="bibtex-field">title</span>     = <span class="bibtex-brace">{</span><span class="bibtex-value">When {AI} Meets Early Childhood Education: Large Language Models as Assessment Teammates in {Chinese} Preschools</span><span class="bibtex-brace">}</span>,
-  <span class="bibtex-field">author</span>    = <span class="bibtex-brace">{</span><span class="bibtex-value">Li, Xingming and Huang, Runke and Bao, Yanan and Jin, Yuye and Jiao, Yuru and Hu, Qingyong</span><span class="bibtex-brace">}</span>,
-  <span class="bibtex-field">booktitle</span> = <span class="bibtex-brace">{</span><span class="bibtex-value">Proceedings of the 27th International Conference on Artificial Intelligence in Education ({AIED})</span><span class="bibtex-brace">}</span>,
-  <span class="bibtex-field">year</span>      = <span class="bibtex-brace">{</span><span class="bibtex-value">2026</span><span class="bibtex-brace">}</span>,
-  <span class="bibtex-field">address</span>   = <span class="bibtex-brace">{</span><span class="bibtex-value">Seoul, South Korea</span><span class="bibtex-brace">}</span>
-<span class="bibtex-brace">}</span></pre>
+      <div class="cite-body">
+        <pre id="bibtexCode"><span class="bp">@inproceedings{</span><span class="bk">li2026when</span><span class="bp">,</span>
+  <span class="bf">title</span>     <span class="bp">= {</span><span class="bv">When {AI} Meets Early Childhood Education: Large Language Models as Assessment Teammates in {Chinese} Preschools</span><span class="bp">},</span>
+  <span class="bf">author</span>    <span class="bp">= {</span><span class="bv">Li, Xingming and Huang, Runke and Bao, Yanan and Jin, Yuye and Jiao, Yuru and Hu, Qingyong</span><span class="bp">},</span>
+  <span class="bf">booktitle</span> <span class="bp">= {</span><span class="bv">Proceedings of the 27th International Conference on Artificial Intelligence in Education ({AIED})</span><span class="bp">},</span>
+  <span class="bf">year</span>      <span class="bp">= {</span><span class="bv">2026</span><span class="bp">},</span>
+  <span class="bf">address</span>   <span class="bp">= {</span><span class="bv">Seoul, South Korea</span><span class="bp">}</span>
+<span class="bp">}</span></pre>
       </div>
     </div>
   </div>
@@ -513,18 +509,23 @@
 <!-- ===== Footer ===== -->
 <footer>
   <div class="container">
-    <div class="footer-content">
-      <span class="footer-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        AIED 2026 · Seoul
-      </span>
-      <span class="footer-badge">Paper ID: 408</span>
-      <a href="https://aied-conference.org/2026" target="_blank" rel="noopener noreferrer" class="footer-badge" style="border-color:rgba(0,245,255,0.2); color:#00f5ff;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Conference Website
-      </a>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong style="font-size:0.9rem;">When AI Meets Early Childhood Education</strong>
+        <p>&copy; 2026 The Authors. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://aied-conference.org/2026" target="_blank" rel="noopener noreferrer" class="footer-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AIED 2026
+        </a>
+        <a href="AIED26_paper_408.pdf" download class="footer-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Paper PDF
+        </a>
+        <span class="footer-chip">Paper #408</span>
+      </div>
     </div>
-    <p>&copy; 2026 The Authors. All rights reserved.</p>
   </div>
 </footer>
 
