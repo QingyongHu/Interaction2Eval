@@ -3,7 +3,7 @@
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let particles = [], animId;
+  let particles = [], animId, isMobile;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -11,7 +11,9 @@
   }
 
   function createParticles() {
-    const count = Math.floor((canvas.width * canvas.height) / 20000);
+    isMobile = window.innerWidth < 768;
+    const density = isMobile ? 50000 : 18000;
+    const count = Math.floor((canvas.width * canvas.height) / density);
     particles = [];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -39,18 +41,20 @@
       ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
       ctx.fill();
     });
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 100) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(37,99,235,${0.04 * (1 - d / 100)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+    if (!isMobile) {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(37,99,235,${0.04 * (1 - d / 100)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
         }
       }
     }
@@ -101,48 +105,67 @@
   document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
 })();
 
+// ===== Stat Bars (Dataset section) =====
+(function initStatBars() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.sb-fill[data-pct]').forEach(el => {
+        el.style.width = parseFloat(el.dataset.pct) + '%';
+      });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  const sb = document.querySelector('.stat-bars');
+  if (sb) io.observe(sb);
+})();
+
+// ===== Efficiency Bars Animation =====
+(function initEffBars() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.eff-fill[data-pct]').forEach(el => {
+        el.style.width = parseFloat(el.dataset.pct) + '%';
+      });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  const eff = document.querySelector('.efficiency-bar');
+  if (eff) io.observe(eff);
+})();
+
 // ===== Charts =====
 Chart.defaults.color = '#64748b';
 Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.font.size = 12;
 
-// Dataset Doughnut Charts
-const doughnutOpts = (labels, data, colors, borderColors) => ({
-  type: 'doughnut',
-  data: {
-    labels,
-    datasets: [{ data, backgroundColor: colors, borderColor: borderColors, borderWidth: 2 }],
-  },
-  options: {
-    responsive: true,
-    cutout: '62%',
-    plugins: {
-      legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyleWidth: 10 } },
-      tooltip: { callbacks: { label: (c) => ` ${c.label}: ${c.parsed}%` } },
-    },
-  },
+// Inline data label plugin — shows values to the right of each bar
+Chart.register({
+  id: 'barDatalabels',
+  afterDraw(chart) {
+    if (chart.config.type !== 'bar') return;
+    const { ctx } = chart;
+    chart.data.datasets.forEach((ds, i) => {
+      chart.getDatasetMeta(i).data.forEach((bar, j) => {
+        const val = ds.data[j];
+        ctx.save();
+        ctx.fillStyle = j === 0 ? '#0f172a' : '#475569';
+        ctx.font = `${j === 0 ? '700' : '600'} 11px "Inter", -apple-system, sans-serif`;
+        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'left';
+        ctx.fillText(val + '%', bar.x + 6, bar.y);
+        ctx.restore();
+      });
+    });
+  }
 });
-
-const speechCtx = document.getElementById('speechChart');
-if (speechCtx) new Chart(speechCtx, doughnutOpts(
-  ['Teacher Speech', 'Student Speech'],
-  [73.85, 26.15],
-  ['rgba(37,99,235,0.75)', 'rgba(124,58,237,0.65)'],
-  ['#2563eb', '#7c3aed'],
-));
-
-const speakerCtx = document.getElementById('speakerChart');
-if (speakerCtx) new Chart(speakerCtx, doughnutOpts(
-  ['Teachers', 'Students'],
-  [45.09, 54.91],
-  ['rgba(217,119,6,0.7)', 'rgba(220,38,38,0.6)'],
-  ['#d97706', '#dc2626'],
-));
 
 // Bar Charts — Model Agreement
 const barOpts = (color) => ({
   responsive: true,
   indexAxis: 'y',
+  layout: { padding: { right: 8 } },
   plugins: {
     legend: { display: false },
     tooltip: { callbacks: { label: (c) => ` ${c.parsed.x}% agreement` } },

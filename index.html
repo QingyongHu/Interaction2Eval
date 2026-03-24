@@ -31,6 +31,7 @@
     <li><a href="#results">Results</a></li>
     <li><a href="#authors">Authors</a></li>
     <li><a href="#citation">Cite</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -60,6 +61,10 @@
 
         <p class="hero-meta">
           <strong>Paper #408</strong> &nbsp;·&nbsp; 27th International Conference on Artificial Intelligence in Education
+        </p>
+        <p class="hero-accept-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Full Paper &nbsp;&middot;&nbsp; <strong>16.7%</strong> acceptance rate from 1,241 submissions
         </p>
 
         <div class="hero-authors">
@@ -95,6 +100,10 @@
 <!-- ===== Stats ===== -->
 <section id="stats">
   <div class="container">
+    <div class="stats-heading reveal">
+      <p class="section-label">Highlights</p>
+      <p class="stats-sub">Dataset scale, annotation quality, and real-world deployment performance</p>
+    </div>
     <div class="stats-grid">
       <div class="stat-item reveal">
         <div class="stat-number"><span data-count="370" data-suffix="+">370+</span></div>
@@ -136,17 +145,23 @@
 
       <div class="contribs">
         <div class="contrib-card reveal d1">
-          <span class="contrib-icon">🗄️</span>
+          <span class="contrib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.657 4.03 3 9 3s9-1.343 9-3V5"/><path d="M3 12c0 1.657 4.03 3 9 3s9-1.343 9-3"/></svg>
+          </span>
           <h4>TEPE-TCI-370h Dataset</h4>
           <p>First large-scale dataset of naturalistic teacher-child interactions in Chinese preschools — 370 hours, 105 classrooms, standardized ECQRS-EC &amp; SSTEW annotations.</p>
         </div>
         <div class="contrib-card reveal d2">
-          <span class="contrib-icon">🤖</span>
+          <span class="contrib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="5" rx="1"/><rect x="8.5" y="10" width="7" height="5" rx="1"/><rect x="15" y="17" width="7" height="5" rx="1"/><line x1="9" y1="5.5" x2="9.5" y2="12.5"/><line x1="15.5" y1="12.5" x2="15.5" y2="19"/></svg>
+          </span>
           <h4>Interaction2Eval Framework</h4>
           <p>Specialized LLM-based pipeline for educational speech: Mandarin homophone disambiguation, child speech recognition, rubric-based assessment with evidence-first reasoning.</p>
         </div>
         <div class="contrib-card reveal d3">
-          <span class="contrib-icon">🚀</span>
+          <span class="contrib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </span>
           <h4>Scalable Deployment</h4>
           <p>18× efficiency gains validated across 43 real classrooms — shifting from annual episodic audits to monthly AI-assisted continuous monitoring.</p>
         </div>
@@ -168,7 +183,7 @@
 
     <div class="two-col">
       <div class="figure-frame reveal">
-        <img src="figs/dataset.png" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools, 105 classrooms" />
+        <img src="figs/dataset.png" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools, 105 classrooms" loading="lazy" decoding="async" />
         <p class="figure-caption">Figure 1: TEPE-TCI dataset composition and statistics</p>
       </div>
 
@@ -181,13 +196,34 @@
           Professional assessors (κ &gt; 0.80 inter-rater reliability) applied <strong>ECQRS-EC</strong> (22 items, 4 domains: Literacy, Mathematics, Science, Diversity) and <strong>SSTEW</strong> (15 items) rubrics with indicator-level binary coding across 206 total indicators.
         </p>
 
-        <div class="chart-box">
-          <canvas id="speechChart"></canvas>
-          <p class="chart-cap">Speech Segment Distribution (Teacher vs. Student)</p>
-        </div>
-        <div class="chart-box">
-          <canvas id="speakerChart"></canvas>
-          <p class="chart-cap">Speaker Count Distribution</p>
+        <div class="stat-bars">
+          <div class="sb-section">
+            <p class="sb-title">Speech Segments</p>
+            <div class="sb-row">
+              <span class="sb-label">Teacher</span>
+              <div class="sb-track"><div class="sb-fill" style="--sb-color:rgba(37,99,235,0.75)" data-pct="73.85"></div></div>
+              <span class="sb-pct">73.85%</span>
+            </div>
+            <div class="sb-row">
+              <span class="sb-label">Student</span>
+              <div class="sb-track"><div class="sb-fill" style="--sb-color:rgba(124,58,237,0.65)" data-pct="26.15"></div></div>
+              <span class="sb-pct">26.15%</span>
+            </div>
+          </div>
+          <div class="sb-divider"></div>
+          <div class="sb-section">
+            <p class="sb-title">Speaker Count</p>
+            <div class="sb-row">
+              <span class="sb-label">Teachers</span>
+              <div class="sb-track"><div class="sb-fill" style="--sb-color:rgba(217,119,6,0.7)" data-pct="45.09"></div></div>
+              <span class="sb-pct">45.09%</span>
+            </div>
+            <div class="sb-row">
+              <span class="sb-label">Students</span>
+              <div class="sb-track"><div class="sb-fill" style="--sb-color:rgba(220,38,38,0.6)" data-pct="54.91"></div></div>
+              <span class="sb-pct">54.91%</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -206,7 +242,7 @@
     </div>
 
     <div class="framework-fig reveal">
-      <img src="figs/framework.png" alt="Interaction2Eval Pipeline — Transcription Agent, Refinement Agent, Evaluation Agent" />
+      <img src="figs/framework.png" alt="Interaction2Eval Pipeline — Transcription Agent, Refinement Agent, Evaluation Agent" loading="lazy" decoding="async" />
     </div>
 
     <div class="steps">
@@ -228,16 +264,24 @@
     </div>
 
     <div class="efficiency-bar reveal">
-      <div class="eff-item">
-        <div class="eff-lbl">Traditional Expert</div>
-        <div class="eff-val crossed">380 min</div>
+      <p class="eff-context">Processing Time &mdash; Per 3-Hour Classroom Session</p>
+      <div class="eff-rows">
+        <div class="eff-row">
+          <span class="eff-name">Manual<br>Expert</span>
+          <div class="eff-track">
+            <div class="eff-fill trad" data-pct="100"></div>
+          </div>
+          <span class="eff-num crossed">380 min</span>
+        </div>
+        <div class="eff-row">
+          <span class="eff-name">Interaction<br>2Eval</span>
+          <div class="eff-track">
+            <div class="eff-fill ai" data-pct="5.5"></div>
+          </div>
+          <span class="eff-num eff-num-new">21 min</span>
+        </div>
       </div>
-      <div class="eff-arrow">→</div>
-      <div class="eff-item">
-        <div class="eff-lbl">Interaction2Eval</div>
-        <div class="eff-val new">21 min</div>
-      </div>
-      <div class="eff-pill">⚡ 18× Faster</div>
+      <div class="eff-pill">&#9889; 18&times; Faster</div>
     </div>
   </div>
 </section>
@@ -271,6 +315,7 @@
     <div class="cer-card reveal">
       <h4>ASR Quality — Character Error Rate (CER) Before &amp; After Refinement</h4>
       <p class="sub">Evaluated on a 5-hour test set (16,168 reference characters from naturalistic preschool audio)</p>
+      <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -298,12 +343,13 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
 
     <!-- Word cloud -->
     <div class="wc-card reveal">
       <div class="wc-img">
-        <img src="figs/wordcloud.png" alt="Word cloud of frequently misrecognized terms in ASR output from Chinese preschool audio" />
+        <img src="figs/wordcloud.png" alt="Word cloud of frequently misrecognized terms in ASR output from Chinese preschool audio" loading="lazy" decoding="async" />
       </div>
       <div class="wc-body">
         <h4>Misrecognized Terms Word Cloud</h4>
@@ -338,7 +384,7 @@
 
     <div class="deploy-grid">
       <div class="figure-frame reveal">
-        <img src="figs/feedback.png" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions processed" />
+        <img src="figs/feedback.png" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions processed" loading="lazy" decoding="async" />
         <p class="figure-caption">Figure 4: Pilot deployment overview — data collection, pipeline, and teacher feedback</p>
       </div>
 
@@ -502,6 +548,37 @@
   <span class="bf">address</span>   <span class="bp">= {</span><span class="bv">Seoul, South Korea</span><span class="bp">}</span>
 <span class="bp">}</span></pre>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<div class="divider"></div>
+<section id="contact">
+  <div class="container" style="max-width: 860px;">
+    <div class="section-header reveal">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">For questions about the paper, dataset, or Interaction2Eval framework, please contact the corresponding author.</p>
+    </div>
+
+    <div class="contact-card reveal">
+      <div class="contact-person">
+        <div class="contact-avatar">
+          <img src="bio/runke huang.png" alt="Runke Huang" />
+        </div>
+        <div class="contact-details">
+          <p class="contact-name">Runke Huang</p>
+          <p class="contact-role">Corresponding Author &nbsp;·&nbsp; The Chinese University of Hong Kong, Shenzhen</p>
+          <a href="mailto:runkehuang@cuhk.edu.cn" class="contact-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            runkehuang@cuhk.edu.cn
+          </a>
+        </div>
+      </div>
+      <p class="contact-note">
+        We welcome questions about the <strong>TEPE-TCI-370h dataset</strong>, the <strong>Interaction2Eval framework</strong>, and potential collaboration opportunities in AI-assisted early childhood education assessment.
+      </p>
     </div>
   </div>
 </section>
