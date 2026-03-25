@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome for dropdown icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
@@ -34,6 +37,40 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
+<!-- ===== More Works Dropdown ===== -->
+<div class="more-works-container">
+  <button class="more-works-btn" id="moreWorksBtn" aria-expanded="false">
+    <i class="fas fa-th-large"></i> More Works <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="more-works-dropdown" id="moreWorksDropdown" role="menu">
+    <div class="dropdown-header">Our Group's Research</div>
+
+    <a href="https://qingyonghu.github.io/ENC-Bench/" target="_blank" rel="noopener" class="work-item" role="menuitem">
+      <span class="work-item-badge work-item-badge--cvpr">CVPR</span>
+      <div class="work-item-info">
+        <strong>ENC-Bench</strong>
+        <span>Electronic Navigational Charts Benchmark</span>
+      </div>
+    </a>
+
+    <a href="https://qingyonghu.github.io/Efficient-Hallucination-Detection/" target="_blank" rel="noopener" class="work-item" role="menuitem">
+      <span class="work-item-badge work-item-badge--aaai">AAAI</span>
+      <div class="work-item-info">
+        <strong>Efficient-HD</strong>
+        <span>Efficient Hallucination Detection</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/QingyongHu" target="_blank" rel="noopener" class="work-item" role="menuitem">
+      <span class="work-item-badge work-item-badge--gh"><i class="fab fa-github"></i></span>
+      <div class="work-item-info">
+        <strong>GitHub</strong>
+        <span>View all repositories</span>
+      </div>
+    </a>
+  </div>
+</div>
 
 <!-- ===== Hero ===== -->
 <section id="hero">
@@ -90,7 +127,7 @@
 
       <div class="hero-figure-wrap">
         <div class="hero-figure">
-          <img src="figs/Teaser.png" alt="AIED 2026 — AI-powered teacher-child interaction quality assessment in Chinese preschools" />
+          <img src="figs/Teaser.webp" alt="AIED 2026 — AI-powered teacher-child interaction quality assessment in Chinese preschools" />
         </div>
       </div>
     </div>
@@ -183,7 +220,7 @@
 
     <div class="two-col">
       <div class="figure-frame reveal">
-        <img src="figs/dataset.png" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools, 105 classrooms" loading="lazy" decoding="async" />
+        <img src="figs/dataset.webp" alt="TEPE-TCI Dataset Overview — 370+ hours from 41 preschools, 105 classrooms" loading="lazy" decoding="async" />
         <p class="figure-caption">Figure 1: TEPE-TCI dataset composition and statistics</p>
       </div>
 
@@ -242,7 +279,7 @@
     </div>
 
     <div class="framework-fig reveal">
-      <img src="figs/framework.png" alt="Interaction2Eval Pipeline — Transcription Agent, Refinement Agent, Evaluation Agent" loading="lazy" decoding="async" />
+      <img src="figs/framework.webp" alt="Interaction2Eval Pipeline — Transcription Agent, Refinement Agent, Evaluation Agent" loading="lazy" decoding="async" />
     </div>
 
     <div class="steps">
@@ -349,7 +386,7 @@
     <!-- Word cloud -->
     <div class="wc-card reveal">
       <div class="wc-img">
-        <img src="figs/wordcloud.png" alt="Word cloud of frequently misrecognized terms in ASR output from Chinese preschool audio" loading="lazy" decoding="async" />
+        <img src="figs/wordcloud.webp" alt="Word cloud of frequently misrecognized terms in ASR output from Chinese preschool audio" loading="lazy" decoding="async" />
       </div>
       <div class="wc-body">
         <h4>Misrecognized Terms Word Cloud</h4>
@@ -384,7 +421,7 @@
 
     <div class="deploy-grid">
       <div class="figure-frame reveal">
-        <img src="figs/feedback.png" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions processed" loading="lazy" decoding="async" />
+        <img src="figs/feedback.webp" alt="Pilot Deployment Study — 3 kindergartens, 77 teachers, 127 sessions processed" loading="lazy" decoding="async" />
         <p class="figure-caption">Figure 4: Pilot deployment overview — data collection, pipeline, and teacher feedback</p>
       </div>
 
@@ -588,6 +625,21 @@
     </div>
   </div>
 </section>
+
+<!-- ===== Visitor Map ===== -->
+<div class="visitor-map-section">
+  <p class="visitor-label">Visitors Around the World</p>
+  <div class="clustrmap-container" style="width:360px;">
+    <script type="text/javascript" id="mapmyvisitors"
+      src="//mapmyvisitors.com/map.js?d=McEl4jkqwh056C2MlUWdad1uv5GtlPQWtiZLAZ3ttok&cl=ffffff&w=360">
+    </script>
+    <noscript>
+      <a href="https://mapmyvisitors.com/web/1c3gh" title="Visit tracker">
+        <img src="https://mapmyvisitors.com/map.png?d=McEl4jkqwh056C2MlUWdad1uv5GtlPQWtiZLAZ3ttok&cl=ffffff&w=360" alt="Visitor map" style="width:360px;" />
+      </a>
+    </noscript>
+  </div>
+</div>
 
 <!-- ===== Footer ===== -->
 <footer>

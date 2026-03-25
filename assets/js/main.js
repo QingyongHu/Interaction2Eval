@@ -250,3 +250,24 @@ if (sstewCtx) {
     }, 2500);
   });
 })();
+
+// ===== More Works Dropdown =====
+(function initMoreWorks() {
+  const btn = document.getElementById('moreWorksBtn');
+  const dropdown = document.getElementById('moreWorksDropdown');
+  if (!btn || !dropdown) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isExpanded);
+    dropdown.classList.toggle('is-active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      btn.setAttribute('aria-expanded', 'false');
+      dropdown.classList.remove('is-active');
+    }
+  });
+})();
